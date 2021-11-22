@@ -1,20 +1,19 @@
-package MessageU;
+package editprofile;
 import java.util.Scanner;
 
 /**
  *
- * @author Rick
+ * @author Ricky
  */
 public class UserAccount {
     
     //user info
-    String Username = "Enter Username";
+    String Username = "ENTER USERNAME";
     
-    String Password = "Enter Password";
+    String Password = "ENTER PASSWORD";
     
-    String ScreenName = "Enter Screen Name";
+    String ScreenName = "ENTER SCREEN NAME";
     
-    // scanner object for input
     Scanner scan = new Scanner(System.in);
     
     //get username
@@ -27,7 +26,7 @@ public class UserAccount {
         return Password;
 }
     
-    //get screen name
+    //get password
     public String getScreenName() {
         return ScreenName;
 }
@@ -37,17 +36,16 @@ public class UserAccount {
         u = Username;
     }
     
-    //set password
+      //set username
     public void setPassword(String x) {
         x = Password;
     }
     
-    //set screen name
+        //set username
     public void setScreenName(String y) {
         y = ScreenName;
     }
     
-    //edit profile method for use case 5 (call from the main())
     public void editProfile() {
         // edit profile prompt
         System.out.println("Please enter 'edit' if you would like to edit profile or 'cancel' to exit");
@@ -61,29 +59,60 @@ public class UserAccount {
         
         System.out.println("Screen Name:" + getScreenName());
         
-        //set new user info
+        //username change input
+        String input1 = "input1";
+        
+        //password change input
+        String input2 = "input2";
+        
+        //ScreenName change input
+        String input3 = "input3";
+        
+        //enter new username
         System.out.println("Please enter a new username");
-        Username = scan.nextLine();
+        input1 = scan.nextLine();
+        //if else for username
+        if (input1.isEmpty()) {
+            System.out.println("No change");
+        } else {
+        Username = input1;
+        }
         
+        //enter new password
         System.out.println("Please enter a new password");
-        Password = scan.nextLine();
+        input2 = scan.nextLine();
+        //if else for password
+                if (input2.isEmpty()) {
+            System.out.println("No change");
+        } else {
+        Password = input2;
+        }
         
+        //enter new screen name
         System.out.println("Please enter a new screeen name");
-        ScreenName = scan.nextLine();
+        input3 = scan.nextLine();
+        //if else for screen name               
+                if (input3.isEmpty()) {
+            System.out.println("No change");
+        } else {
+        ScreenName = input3;            
+        }
         
-        //new profile info output
+        //new profile output
         System.out.println("New Username:" + getUsername());
         
         System.out.println("New Password:" + getPassword());
         
         System.out.println("New Screen Name:" + getScreenName());
-    }
-        //cancel edit for user
+        
+        //loop if user wants to edit again
+        editProfile();
+    }   
+        //cancel option for user
         else if ("cancel".equals(userChoice)){
         System.out.println("Edit Canceled");
         }
-        
-        //response for any other input from user, loops method
+        //other inputs from user
         else{ 
             System.out.println("Invalid input");
             editProfile();
