@@ -1,0 +1,92 @@
+package MessageU;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Rick
+ */
+public class UserAccount {
+    
+    //user info
+    String Username = "Enter Username";
+    
+    String Password = "Enter Password";
+    
+    String ScreenName = "Enter Screen Name";
+    
+    // scanner object for input
+    Scanner scan = new Scanner(System.in);
+    
+    //get username
+    public String getUsername() {
+        return Username;
+}
+    
+    //get password
+    public String getPassword() {
+        return Password;
+}
+    
+    //get password
+    public String getScreenName() {
+        return ScreenName;
+}
+    
+    //set username
+    public void setUsername(String u) {
+        u = Username;
+    }
+    
+    //set username
+    public void setPassword(String x) {
+        x = Password;
+    }
+    
+    //set username
+    public void setScreenName(String y) {
+        y = ScreenName;
+    }
+    
+    //edit profile method for use case 5 (call from the main())
+    public void editProfile() {
+        // edit profile prompt
+        System.out.println("Please enter 'edit' if you would like to edit profile or 'cancel' to exit");
+        //user choice variable
+        String userChoice = scan.nextLine();
+        if ("edit".equals(userChoice)) {
+        //show user info
+        System.out.println("Username:" + getUsername());
+        
+        System.out.println("Password:" + getPassword());
+        
+        System.out.println("Screen Name:" + getScreenName());
+        
+        //set new user info
+        System.out.println("Please enter a new username");
+        Username = scan.nextLine();
+        
+        System.out.println("Please enter a new password");
+        Password = scan.nextLine();
+        
+        System.out.println("Please enter a new screeen name");
+        ScreenName = scan.nextLine();
+        
+        //new profile info output
+        System.out.println("New Username:" + getUsername());
+        
+        System.out.println("New Password:" + getPassword());
+        
+        System.out.println("New Screen Name:" + getScreenName());
+    }
+        //cancel edit for user
+        else if ("cancel".equals(userChoice)){
+        System.out.println("Edit Canceled");
+        }
+        
+        //response for any other input from user, loops method
+        else{ 
+            System.out.println("Invalid input");
+            editProfile();
+    }
+ }
+}
