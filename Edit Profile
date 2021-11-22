@@ -27,7 +27,7 @@ public class UserAccount {
         return Password;
 }
     
-    //get password
+    //get screen name
     public String getScreenName() {
         return ScreenName;
 }
@@ -37,12 +37,12 @@ public class UserAccount {
         u = Username;
     }
     
-    //set username
+    //set password
     public void setPassword(String x) {
         x = Password;
     }
     
-    //set username
+    //set screen name
     public void setScreenName(String y) {
         y = ScreenName;
     }
