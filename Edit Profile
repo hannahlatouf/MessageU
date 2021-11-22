@@ -1,4 +1,4 @@
-package editprofile;
+package MessageU;
 import java.util.Scanner;
 
 /**
