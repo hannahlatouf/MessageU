@@ -90,7 +90,7 @@ public class message{
         
         //Put your workbench information in here
         String username = "root";
-        String password = "MayShi#02";
+        String password = "Put your pass here";
         
         
         //CONNECTING TO DATABASE
