@@ -22,7 +22,7 @@
         String url = "jdbc:mysql://localhost:3306/" +databaseName;
         //Put your workbench info in here
         String username = "root";
-        String password = "MayShi#02";
+        String password = "put your pass here";
         
         %>
        
