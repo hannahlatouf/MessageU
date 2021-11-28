@@ -81,7 +81,6 @@ public class message{
     
     public void sendMessage(int senderID, int chatID, String senderName, String message, String timestamp)throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{
        
-        System.out.println("im in here");
 
         //Input would come from JSP and call this function
         Connection connections =null;
