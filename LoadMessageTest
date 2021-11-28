@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Messages</title>
+    </head>
+    <body>
+        <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Message</td>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $connect = mysql_connect("localhost","root", "root");
+            if (!$connect) {
+                die(mysql_error());
+            }
+            mysql_select_db("messageU");
+            $results = mysql_query("SELECT * FROM message WHERE chatID = ID ORDER BY messageID DESC");
+            while($row = mysql_fetch_array($results)) {
+            ?>
+                <tr>
+                    <td><?php echo $row['senderName']?></td>
+                    <td><?php echo $row['message']?></td>
+                </tr>
+            <?php
+            }
+            ?>
+        </tbody>
+        </table>
+    </body>
+</html>
